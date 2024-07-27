@@ -4,17 +4,19 @@ script that starsts a flask web application
 """
 from flask import Flask
 app = Flask(__name__)
-@app.route('/', strict_slashes=False)
+app.url_map.strict_slashes =False
+
+@app.route('/')
 def index():
     """return Hello HBNB!"""
     return 'Hello HBNB!'
 
-@app.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb')
 def hbnb():
     """return HBNB"""
     return 'HBNB'
 
-@app.route('/c/<text>', strict_slashes=False)
+@app.route('/c/<text>')
 def cisfun():
     """display “C ” followed by the value of the text variable (replace underscore _ symbols with a space )"""
     return 'c' + text.replace('_', '')

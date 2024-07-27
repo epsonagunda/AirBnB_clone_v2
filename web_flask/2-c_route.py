@@ -1,25 +1,27 @@
 #!/usr/bin/python3
-"""
-script that starsts a flask web application
-"""
+""" 2. Script to start a Flask web application with 3 view functions """
+
 from flask import Flask
+
+
 app = Flask(__name__)
-app.url_map.strict_slashes =False
+app.url_map.strict_slashes = False
+
 
 @app.route('/')
-def index():
-    """return Hello HBNB!"""
+def hello_world():
+    """ Returns some text. """
     return 'Hello HBNB!'
-
 @app.route('/hbnb')
-def hbnb():
-    """return HBNB"""
+def hello():
+    """ Return other text. """
     return 'HBNB'
-
 @app.route('/c/<text>')
-def cisfun():
-    """display “C ” followed by the value of the text variable (replace underscore _ symbols with a space )"""
-    return 'c' + text.replace('_', '')
+def c_text(text):
+    """ replace text with variable. """
+    text = text.replace('_', ' ')
+    return 'C {}'.format(text)
 
-if __name__ == '__main__'
-app.run(host='0.0.0.0', port-'5000')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)

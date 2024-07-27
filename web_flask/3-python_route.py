@@ -24,6 +24,5 @@ def cisfun():
 def pythoniscool(text='is cool'):
     """display "python",followed by the value of the text variable"""
     return 'python ' + text.replace('_', '')
-
-if __name__ == ' __main__'
-app.run(host='0.0.0.0', port ='5000')
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port ='5000')
